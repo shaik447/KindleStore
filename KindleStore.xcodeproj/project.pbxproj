@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		38630B2C1EE4981000A4C3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38630B2B1EE4981000A4C3CE /* AppDelegate.swift */; };
 		38630B2E1EE4981000A4C3CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38630B2D1EE4981000A4C3CE /* ViewController.swift */; };
-		38630B311EE4981000A4C3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38630B2F1EE4981000A4C3CE /* Main.storyboard */; };
 		38630B331EE4981000A4C3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38630B321EE4981000A4C3CE /* Assets.xcassets */; };
 		38630B361EE4981000A4C3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38630B341EE4981000A4C3CE /* LaunchScreen.storyboard */; };
+		38D2ABBE1EE4A4C700D601A4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2ABBD1EE4A4C700D601A4 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		38630B281EE4981000A4C3CE /* KindleStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindleStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38630B2B1EE4981000A4C3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38630B2D1EE4981000A4C3CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		38630B301EE4981000A4C3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38630B321EE4981000A4C3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38630B351EE4981000A4C3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38630B371EE4981000A4C3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38D2ABBD1EE4A4C700D601A4 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +56,10 @@
 			children = (
 				38630B2B1EE4981000A4C3CE /* AppDelegate.swift */,
 				38630B2D1EE4981000A4C3CE /* ViewController.swift */,
-				38630B2F1EE4981000A4C3CE /* Main.storyboard */,
 				38630B321EE4981000A4C3CE /* Assets.xcassets */,
 				38630B341EE4981000A4C3CE /* LaunchScreen.storyboard */,
 				38630B371EE4981000A4C3CE /* Info.plist */,
+				38D2ABBD1EE4A4C700D601A4 /* Models.swift */,
 			);
 			path = KindleStore;
 			sourceTree = "<group>";
@@ -125,7 +125,6 @@
 			files = (
 				38630B361EE4981000A4C3CE /* LaunchScreen.storyboard in Resources */,
 				38630B331EE4981000A4C3CE /* Assets.xcassets in Resources */,
-				38630B311EE4981000A4C3CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D2ABBE1EE4A4C700D601A4 /* Models.swift in Sources */,
 				38630B2E1EE4981000A4C3CE /* ViewController.swift in Sources */,
 				38630B2C1EE4981000A4C3CE /* AppDelegate.swift in Sources */,
 			);
@@ -144,14 +144,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		38630B2F1EE4981000A4C3CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				38630B301EE4981000A4C3CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		38630B341EE4981000A4C3CE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -299,6 +291,7 @@
 				38630B3C1EE4981000A4C3CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
