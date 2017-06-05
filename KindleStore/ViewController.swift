@@ -34,10 +34,9 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
-//        let book = books?[indexPath.row]
-//        cell.imageView?.image=book?.BookCover
-//        cell.textLabel?.text = book?.Title
+        let cell=tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath) as! BookCell
+        let book = books?[indexPath.row]
+        cell.book=book        
         return cell
         
     }
