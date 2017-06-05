@@ -16,19 +16,17 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         //view.backgroundColor = .blue
         navigationItem.title="Kindle"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
+        tableView.register(BookCell.self, forCellReuseIdentifier: "cellid")
         tableView.tableFooterView=UIView()
         setupBooks()
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if let count=books?.count{
             return count
         }
         return 0
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -37,19 +35,17 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
-        let book = books?[indexPath.row]
-        cell.imageView?.image=book?.BookCover
-        cell.textLabel?.text = book?.Title
+//        let book = books?[indexPath.row]
+//        cell.imageView?.image=book?.BookCover
+//        cell.textLabel?.text = book?.Title
         return cell
         
     }
     
     func setupBooks() {
-        
         var pages=[Page]()
         pages.append(Page(pageNo: 1, pageText: "This is text from page 1"))
-        pages.append(Page(pageNo: 2, pageText: "This is text from page 2"))
-        
+        pages.append(Page(pageNo: 2, pageText: "This is text from page 2"))        
         let book1=Book(title: "Steve Jobs", author: "Shaik",bookcover:#imageLiteral(resourceName: "stevejobs"), pages: pages)
         let book2=Book(title: "Bill Gates", author: "Shaik",bookcover:#imageLiteral(resourceName: "billgates"), pages: [
             Page(pageNo: 1, pageText: "Text form first page"),
@@ -59,8 +55,6 @@ class ViewController: UITableViewController {
         books=[Book]()
         books?.append(book1)
         books?.append(book2)
-        
-        
         print(books?.count ?? 456)
     }
 }

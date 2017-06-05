@@ -12,6 +12,7 @@
 		38630B331EE4981000A4C3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38630B321EE4981000A4C3CE /* Assets.xcassets */; };
 		38630B361EE4981000A4C3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38630B341EE4981000A4C3CE /* LaunchScreen.storyboard */; };
 		38D2ABBE1EE4A4C700D601A4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2ABBD1EE4A4C700D601A4 /* Models.swift */; };
+		568EED0B1EE551FA0094C2E7 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EED0A1EE551FA0094C2E7 /* BookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		38630B351EE4981000A4C3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38630B371EE4981000A4C3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38D2ABBD1EE4A4C700D601A4 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		568EED0A1EE551FA0094C2E7 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				38630B341EE4981000A4C3CE /* LaunchScreen.storyboard */,
 				38630B371EE4981000A4C3CE /* Info.plist */,
 				38D2ABBD1EE4A4C700D601A4 /* Models.swift */,
+				568EED0A1EE551FA0094C2E7 /* BookCell.swift */,
 			);
 			path = KindleStore;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				568EED0B1EE551FA0094C2E7 /* BookCell.swift in Sources */,
 				38D2ABBE1EE4A4C700D601A4 /* Models.swift in Sources */,
 				38630B2E1EE4981000A4C3CE /* ViewController.swift in Sources */,
 				38630B2C1EE4981000A4C3CE /* AppDelegate.swift in Sources */,
