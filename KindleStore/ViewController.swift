@@ -38,6 +38,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
         let book = books?[indexPath.row]
+        cell.imageView?.image=book?.BookCover
         cell.textLabel?.text = book?.Title
         return cell
         
@@ -49,8 +50,8 @@ class ViewController: UITableViewController {
         pages.append(Page(pageNo: 1, pageText: "This is text from page 1"))
         pages.append(Page(pageNo: 2, pageText: "This is text from page 2"))
         
-        let book1=Book(title: "Steve Jobs", author: "Shaik", pages: pages)
-        let book2=Book(title: "Steve Jobs", author: "Shaik", pages: [
+        let book1=Book(title: "Steve Jobs", author: "Shaik",bookcover:#imageLiteral(resourceName: "stevejobs"), pages: pages)
+        let book2=Book(title: "Bill Gates", author: "Shaik",bookcover:#imageLiteral(resourceName: "billgates"), pages: [
             Page(pageNo: 1, pageText: "Text form first page"),
             Page(pageNo: 2, pageText: "Text form 2nd page"),
             Page(pageNo: 3, pageText: "Text form 3rd page")

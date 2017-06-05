@@ -6,16 +6,18 @@
 //  Copyright © 2017 shaik mulla syed. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Book{
     var Title:String!
     var Author:String!
+    var BookCover:UIImage!
     var Pages:[Page]
     
-    init(title:String, author:String,pages:[Page]) {
+    init(title:String, author:String,bookcover:UIImage,pages:[Page]) {
         self.Title=title
         self.Author=author
+        self.BookCover=bookcover
         self.Pages=pages
     }
 }
