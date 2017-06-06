@@ -41,6 +41,15 @@ class ViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let flowlayout=UICollectionViewFlowLayout()
+        let collectionView=UICollectionViewController(collectionViewLayout: flowlayout)
+        let navController = UINavigationController(rootViewController: collectionView)
+        present(navController, animated: true, completion: {
+            print("view present")
+        })
+    }
+    
     func setupBooks() {
         var pages=[Page]()
         pages.append(Page(pageNo: 1, pageText: "This is text from page 1"))
