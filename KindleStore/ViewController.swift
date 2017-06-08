@@ -45,6 +45,7 @@ class ViewController: UITableViewController {
         let selectedbook:Book=books![indexPath.row]        
         let flowlayout=UICollectionViewFlowLayout()
         let collectionView=PagerController(collectionViewLayout: flowlayout)
+        collectionView.book=selectedbook
         let navController = UINavigationController(rootViewController: collectionView)
         present(navController, animated: true, completion: {
             print("view present")
@@ -64,7 +65,6 @@ class ViewController: UITableViewController {
         books=[Book]()
         books?.append(book1)
         books?.append(book2)
-        print(books?.count ?? 456)
     }
 }
 

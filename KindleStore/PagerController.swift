@@ -10,6 +10,8 @@ import UIKit
 
 class PagerController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
+    var book:Book?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
@@ -20,21 +22,23 @@ class PagerController: UICollectionViewController, UICollectionViewDelegateFlowL
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0.0
         
-//        navigationItem.backBarButtonItem=UIBarButtonItem(barButtonSystemItem: , target: <#T##Any?#>, action: <#T##Selector?#>)
-        
+        navigationItem.leftBarButtonItem=UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.plain, target: self, action: #selector (hidevc))
         //layout.minimumInteritemSpacing = 0.0
-        //automaticallyAdjustsScrollViewInsets=false
-        
+        //automaticallyAdjustsScrollViewInsets=false       
         
     }
     
+    func hidevc(){
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return book?.Pages.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath) as! PageCell
-        
+        cell.updateUI(page: (book?.Pages[indexPath.item]))
         return cell
     }
     

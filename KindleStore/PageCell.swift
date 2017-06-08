@@ -9,9 +9,7 @@
 import UIKit
 
 class PageCell: UICollectionViewCell{
-    
-    var page:Page?
-    
+        
     private var PageText:UITextView={
         let textview=UITextView()
         textview.font=UIFont(name: "Avenir", size: 17)
@@ -24,7 +22,6 @@ class PageCell: UICollectionViewCell{
         super.init(frame: frame)
         //backgroundColor = .blue
         addSubview(PageText)
-        PageText.text=page?.pageText ?? ""
         PageText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive=true
         PageText.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive=true
         PageText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive=true
@@ -34,5 +31,9 @@ class PageCell: UICollectionViewCell{
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateUI(page:Page?) {
+        PageText.text=page?.pageText ?? ""
     }
 }
