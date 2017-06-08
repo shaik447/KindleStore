@@ -23,6 +23,7 @@ class PagerController: UICollectionViewController, UICollectionViewDelegateFlowL
         layout.minimumLineSpacing = 0.0
         
         navigationItem.leftBarButtonItem=UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.plain, target: self, action: #selector (hidevc))
+        navigationItem.title=book?.Title
         //layout.minimumInteritemSpacing = 0.0
         //automaticallyAdjustsScrollViewInsets=false       
         
@@ -47,8 +48,4 @@ class PagerController: UICollectionViewController, UICollectionViewDelegateFlowL
         return CGSize(width: view.bounds.width, height: view.bounds.height-44.0-20.0)
     }
     
-    
-    
-    
-
 }

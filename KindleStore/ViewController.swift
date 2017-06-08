@@ -15,11 +15,94 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //view.backgroundColor = .blue
+        setupnavigationbarstyles()
+        setupnavbuttons()
         navigationItem.title="Kindle"
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellid")
         tableView.tableFooterView=UIView()
-        setupBooks()
+        //setupBooks()
+        fetchBooks()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle=UIStatusBarStyle.lightContent
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle=UIStatusBarStyle.default
+    }
+    
+    func setupnavbuttons(){
+        let imageview=UIImageView(image: UIImage(named: "menu"))
+        imageview.bounds.size=CGSize(width: 30, height: 30)
+        navigationItem.leftBarButtonItem=UIBarButtonItem(customView: imageview)
+        navigationItem.leftBarButtonItem?.style=UIBarButtonItemStyle.plain
+        navigationItem.leftBarButtonItem?.target=self
+        navigationItem.leftBarButtonItem?.action=#selector(menuclicked)
         
+        let imageview2=UIImageView(image: UIImage(named: "amazon2"))
+        imageview2.bounds.size=CGSize(width: 30, height: 30)
+        navigationItem.rightBarButtonItem=UIBarButtonItem(customView: imageview2)
+        
+        
+//        navigationItem.leftBarButtonItem=UIBarButtonItem(image: #imageLiteral(resourceName: "menu").withRenderingMode(.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector (menuclicked))
+    }
+    
+    func menuclicked(){
+        print("menu clicked")
+    }
+    
+    
+    
+    func setupnavigationbarstyles(){
+        
+        navigationController?.navigationBar.barTintColor=UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+//        var textattributes=[String:Any]()
+//        textattributes[NSForegroundColorAttributeName]=UIColor.red
+        navigationController?.navigationBar.isTranslucent=false
+        navigationController?.navigationBar.titleTextAttributes=[NSForegroundColorAttributeName:UIColor.white]
+    }
+    
+    func fetchBooks(){
+        let url=URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json")
+        if let bookurl = url {
+                URLSession.shared.dataTask(with: bookurl, completionHandler: { (data, response, error) in
+                    if let err=error{
+                        print("Failed to fetch json books",err)
+                        return
+                    }
+                    if let datax=data,let datastring=String(data: datax, encoding: .utf8){
+                        do{
+                            //print(datastring)
+                            self.books=[]
+                            let json=try JSONSerialization.jsonObject(with: datax, options: JSONSerialization.ReadingOptions.mutableContainers)
+                            if let bookdictonaries = json as? [[String:Any]]{
+                                for bookdictonary in bookdictonaries{
+
+                                    let tmpBook=Book(bookdictionary: bookdictonary)
+                                    self.books?.append(tmpBook)
+                                    
+//                                    if let title=bookdictonary["title"] as? String, let author=bookdictonary["author"] as? String{
+//                                        print(title,author)
+//                                        self.books?.append(Book(title: title, author: author, bookcover: #imageLiteral(resourceName: "stevejobs"), pages: []))
+//                                    }
+                                }
+                                
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
+                                
+                            }
+
+                        }catch let nserr{
+                            print("Failed to serialize",nserr)
+                        }
+                        
+                                            }
+                    
+                }).resume()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
