@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384E2D2E1EEDE52400D33D55 /* Note in Resources */ = {isa = PBXBuildFile; fileRef = 384E2D2D1EEDE52400D33D55 /* Note */; };
 		3853F6691EE897360083B24E /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3853F6681EE897360083B24E /* PagerController.swift */; };
 		3853F66B1EE8A60F0083B24E /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3853F66A1EE8A60F0083B24E /* PageCell.swift */; };
 		38630B2C1EE4981000A4C3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38630B2B1EE4981000A4C3CE /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		384E2D2D1EEDE52400D33D55 /* Note */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Note; sourceTree = "<group>"; };
 		3853F6681EE897360083B24E /* PagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerController.swift; sourceTree = "<group>"; };
 		3853F66A1EE8A60F0083B24E /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		38630B281EE4981000A4C3CE /* KindleStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindleStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				568EED0A1EE551FA0094C2E7 /* BookCell.swift */,
 				3853F6681EE897360083B24E /* PagerController.swift */,
 				3853F66A1EE8A60F0083B24E /* PageCell.swift */,
+				384E2D2D1EEDE52400D33D55 /* Note */,
 			);
 			path = KindleStore;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384E2D2E1EEDE52400D33D55 /* Note in Resources */,
 				38630B361EE4981000A4C3CE /* LaunchScreen.storyboard in Resources */,
 				38630B331EE4981000A4C3CE /* Assets.xcassets in Resources */,
 			);
