@@ -29,6 +29,8 @@ class BookCell: UITableViewCell{
     private var titleLabel:UILabel={
         let label=UILabel()
         label.text="This is the big title for the title in the first row"
+        label.textColor = UIColor.white
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints=false
         return label
     }()
@@ -36,13 +38,14 @@ class BookCell: UITableViewCell{
     private var authorLabel:UILabel={
         let label=UILabel()
         label.text="This is the big title for the title in the second row"
+        label.textColor = UIColor.lightGray
         label.translatesAutoresizingMaskIntoConstraints=false
         return label
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style:style,reuseIdentifier:reuseIdentifier)
-        
+        backgroundColor = .clear
         addSubview(BookCover)
         BookCover.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive=true
         BookCover.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive=true
